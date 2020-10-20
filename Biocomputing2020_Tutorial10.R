@@ -23,10 +23,12 @@ for(i in 1:nrow(game_stats)){
     MSU_score_timepoint<-append(MSU_score_timepoint, game_stats$time[i])
   }
 }
+
+#create vectors with the cumulative sum of each team's score
 cumulative_UW_score<-append(cumulative_UW_score, cumsum(UW_score_overtime))
 cumulative_MSU_score<-append(cumulative_MSU_score, cumsum(MSU_score_overtime))
 
-#create a data frame for each team's score and the timepoint that they earned that score
+#create a data frame for each team's score and the timepoint that they earned that score. I don't end up using these to make the plot, but the assignment wanted data frames. So here they are.
 MSU_data<-data.frame(cumulative_MSU_score, MSU_score_timepoint)
 UW_data<-data.frame(cumulative_UW_score, UW_score_timepoint)
 
